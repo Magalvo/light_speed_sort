@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:52:19 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 16:37:58 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:27:04 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	append_node(t_stack *stack, int n)
 {
-	t_node *node;
+	t_node	*node;
 
-	if(!stack)
+	if (!stack)
 		return ;
 	node = malloc(sizeof(t_node));
 	if (!node)
@@ -30,24 +30,6 @@ void	append_node(t_stack *stack, int n)
 		stack->tail->next = node;
 	stack->tail = node;
 	stack->size++;
-}
-
-int	stack_len(t_stack *stack)
-{
-	int		i;
-
-	t_node	*current;
-
-	if (!stack || !(stack->head))
-		return (0);
-	i = 0;
-	current = stack->head;
-	while (current)
-	{
-		current = current->next;
-		i++;
-	}
-	return (i);
 }
 
 void	current_index(t_stack *stack)
@@ -91,9 +73,9 @@ bool	stack_sorted(t_stack *stack)
 
 void	push_prep(t_stack *stack, t_node *top_node, char stk_name)
 {
-	while(stack->head != top_node)
+	while (stack->head != top_node)
 	{
-		if(stk_name == 'a')
+		if (stk_name == 'a')
 		{
 			if (top_node->above_median)
 				ra(stack, false);
@@ -110,21 +92,20 @@ void	push_prep(t_stack *stack, t_node *top_node, char stk_name)
 	}
 }
 
-void move_b_a(t_stack *a, t_stack *b)
+void	move_b_a(t_stack *a, t_stack *b)
 {
-	t_node *cheapest_node;
+	t_node	*cheapest_node;
 
-	cheapest_node = get_cheapest(b);
-	//printf("Cheap: %i\n", cheapest_node->value);
+	cheapest_node = b->cheapest;
 	if (cheapest_node->above_median && cheapest_node != b->head
 		&& cheapest_node->target->above_median
 		&& cheapest_node->target != a->head)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
-			&& !(cheapest_node->target->above_median)
-			&& cheapest_node->target != a->head && cheapest_node != b->head)
+		&& !(cheapest_node->target->above_median)
+		&& cheapest_node->target != a->head && cheapest_node != b->head)
 		reverse_rotate_both(a, b, cheapest_node);
-	push_prep(a, (b)->cheapest->target,'a');
+	push_prep(a, (b)->cheapest->target, 'a');
 	push_prep(b, cheapest_node, 'b');
 	pa(a, b, false);
 }

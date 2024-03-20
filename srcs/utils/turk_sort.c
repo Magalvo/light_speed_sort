@@ -6,14 +6,13 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:35:52 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 00:20:01 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:28:43 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-
-static void	min_on_top(t_stack *a)
+void	min_on_top(t_stack *a)
 {
 	while (a->head->value != find_min(a)->value)
 	{

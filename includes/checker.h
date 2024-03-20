@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 16:54:04 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:32:01 by dde-maga         ###   ########.fr       */
+/*   Created: 2024/03/20 17:42:37 by dde-maga          #+#    #+#             */
+/*   Updated: 2024/03/20 17:43:41 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#ifndef CHECKER_H
+# define CHECJER_H
 
-char	*ft_strdup(char *src)
-{
-	unsigned char	*cpy;
-	size_t			i;
-	size_t			len;
+#include "push_swap.h"
 
-	len = ft_strlen(src);
-	i = 0;
-	cpy = (unsigned char *)malloc(sizeof(char) * (len + 1));
-	if (!cpy)
-		return (NULL);
-	while (src[i])
-	{
-		cpy[i] = src[i];
-		i++;
-	}
-	cpy[i] = '\0';
-	return ((char *)cpy);
-}
+
+
+
+#endif

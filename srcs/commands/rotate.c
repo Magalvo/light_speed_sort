@@ -6,13 +6,13 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 19:17:24 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 23:40:16 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:38:45 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void	rotate(t_stack *stack)
+void	rotate(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*last;
@@ -28,6 +28,7 @@ static void	rotate(t_stack *stack)
 	last->next = first;
 	first->prev = last;
 	first->next = NULL;
+	stack->tail = first;
 }
 
 void	ra(t_stack *a, bool print)
@@ -51,19 +52,10 @@ void	rr(t_stack *a, t_stack *b, bool print)
 	if (!print)
 		ft_putstr_fd("rr\n", 1);
 }
-void	rotate_both(t_stack *a, t_stack *b,
-						 t_node *cheapest_node)
+
+void	rotate_both(t_stack *a, t_stack *b, t_node *cheapest_node)
 {
 	while (a->head != cheapest_node->target && b->head != cheapest_node)
-		rr(a, b, false);
-	current_index(a);
-	current_index(b);
-}
-
-void	rotate_both_turk(t_stack *a, t_stack *b, 
-						t_node *cheapest_node)
-{
-	while (b->head != cheapest_node->target && a->head != cheapest_node)
 		rr(a, b, false);
 	current_index(a);
 	current_index(b);

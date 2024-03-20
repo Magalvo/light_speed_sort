@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   rotate_turk.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 16:54:04 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:32:01 by dde-maga         ###   ########.fr       */
+/*   Created: 2024/03/20 16:36:22 by dde-maga          #+#    #+#             */
+/*   Updated: 2024/03/20 16:38:24 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-char	*ft_strdup(char *src)
+void	rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
 {
-	unsigned char	*cpy;
-	size_t			i;
-	size_t			len;
+	while (b->head != cheapest_node->target && a->head != cheapest_node)
+		rr(a, b, false);
+	current_index(a);
+	current_index(b);
+}
 
-	len = ft_strlen(src);
-	i = 0;
-	cpy = (unsigned char *)malloc(sizeof(char) * (len + 1));
-	if (!cpy)
-		return (NULL);
-	while (src[i])
-	{
-		cpy[i] = src[i];
-		i++;
-	}
-	cpy[i] = '\0';
-	return ((char *)cpy);
+void	reverse_rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
+{
+	while (b->head != cheapest_node->target && a->head != cheapest_node)
+		rrr(a, b, false);
+	current_index(a);
+	current_index(b);
 }

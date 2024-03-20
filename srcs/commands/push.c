@@ -18,16 +18,12 @@ static void	push(t_stack *dst, t_stack *src)
 
 	if (!src || !(src->head))
 		return ;
-
 	push_node = src->head;
 	src->head = src->head->next;
-
 	if (src->head)
 		(src)->head->prev = NULL;
-
 	if (dst->head)
-		dst->head->prev= push_node;
-
+		dst->head->prev = push_node;
 	push_node->next = dst->head;
 	push_node->prev = NULL;
 	dst->head = push_node;

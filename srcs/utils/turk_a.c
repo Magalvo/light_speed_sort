@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:57:26 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 23:38:41 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:28:05 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	a_turk_target(t_stack *a, t_stack *b)
 {
 	t_node	*current_a;
 	t_node	*current_b;
-	t_node 	*target;
+	t_node	*target;
 	int		best;
 
 	current_a = a->head;
-	while(current_a)
+	while (current_a)
 	{
 		best = INT_MIN;
 		current_b = b->head;
@@ -43,15 +43,13 @@ void	a_turk_target(t_stack *a, t_stack *b)
 
 void	move_turk_ab(t_stack *a, t_stack *b)
 {
-	t_node *cheapest_node;
+	t_node	*cheapest_node;
 
-	cheapest_node = get_cheapest(a);
-	// printf("Cheap: %i\n", cheapest_node->value);
-	if (cheapest_node->above_median  
-		&& cheapest_node->target->above_median)
+	cheapest_node = a->cheapest;
+	if (cheapest_node->above_median && cheapest_node->target->above_median)
 		rotate_both_turk(a, b, cheapest_node);
-	else if (!(cheapest_node->above_median) 
-			&& !(cheapest_node->target->above_median))
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target->above_median))
 		reverse_rotate_both_turk(a, b, cheapest_node);
 	push_prep(a, cheapest_node, 'a');
 	push_prep(b, cheapest_node->target, 'b');
@@ -67,7 +65,7 @@ void	cost_analysis_turk(t_stack *dst, t_stack *src)
 	temp = src->head;
 	len_dst = stack_len(dst);
 	len_src = stack_len(src);
-	while(temp)
+	while (temp)
 	{
 		temp->cost = temp->index;
 		if (!(temp->above_median))
@@ -76,8 +74,6 @@ void	cost_analysis_turk(t_stack *dst, t_stack *src)
 			temp->cost += temp->target->index;
 		else
 			temp->cost += len_dst - (temp->target->index);
-		//printf("ValueA: %i\t\t", temp->value);
-		//printf("Cost: %i\n", temp->cost);
 		temp = temp->next;
 	}
 }

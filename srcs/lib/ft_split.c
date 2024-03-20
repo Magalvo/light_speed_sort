@@ -6,10 +6,9 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 19:02:43 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/08 15:51:51 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:33:02 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../includes/push_swap.h"
 
@@ -51,7 +50,7 @@ static char	*word_aloc(const char *str, char c)
 	return (word);
 }
 
-static	void	*free_str(char **out, int ctd)
+static void	*free_str(char **out, int ctd)
 {
 	while (ctd >= 0)
 		free(out[ctd--]);

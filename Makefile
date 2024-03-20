@@ -6,7 +6,7 @@
 #    By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 18:26:26 by dde-maga          #+#    #+#              #
-#    Updated: 2024/03/19 16:15:23 by dde-maga         ###   ########.fr        #
+#    Updated: 2024/03/20 16:37:13 by dde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = push_swap
 SRC_UTILS = errors.c finds.c indexation.c quick_friend.c \
 			small_sorts.c stack_a.c stack_b.c stacks.c turk_sort.c \
 			turk_a.c turk_b.c
-SRC_COMMANDS = push.c reverse_rotate.c rotate.c swap.c
+SRC_COMMANDS = push.c reverse_rotate.c rotate.c swap.c rotate_turk.c
 SRC_LIB = ft_atol.c ft_calloc.c ft_putstr_fd.c ft_split.c \
 			ft_substr.c ft_strlen.c ft_strdup.c ft_memcpy.c \
 			ft_memset.c

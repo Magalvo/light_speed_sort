@@ -6,17 +6,17 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:53:22 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 15:31:42 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:26:18 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_node *get_best_friend(t_stack *a, int nbr)
+t_node	*get_best_friend(t_stack *a, int nbr)
 {
-	int		temp;
 	t_node	*temp_node;
 	t_node	*current;
+	int		temp;
 
 	current = a->head;
 	temp = INT_MAX;
@@ -32,18 +32,18 @@ t_node *get_best_friend(t_stack *a, int nbr)
 	return (temp_node);
 }
 
-void set_target_b(t_stack *a, t_stack *b)
+void	set_target_b(t_stack *a, t_stack *b)
 {
-	t_node *current;
+	t_node	*current;
 
 	current = b->head;
 	while (current)
 	{
 		current->target = get_best_friend(a, current->value);
-		//printf("Bestie: %i\n", current->target->value);
 		current = current->next;
 	}
 }
+
 void	cost_analysis(t_stack *dst, t_stack *src)
 {
 	int		len_dst;
@@ -51,9 +51,9 @@ void	cost_analysis(t_stack *dst, t_stack *src)
 	t_node	*temp;
 
 	temp = src->head;
-	len_dst= stack_len(dst);
-	len_src= stack_len(src);
-	while(temp)
+	len_dst = stack_len(dst);
+	len_src = stack_len(src);
+	while (temp)
 	{
 		temp->cost = temp->index;
 		if (!(temp->above_median))
@@ -62,8 +62,6 @@ void	cost_analysis(t_stack *dst, t_stack *src)
 			temp->cost += temp->target->index;
 		else
 			temp->cost += len_dst - (temp->target->index);
-		//printf("ValueA: %i\t\t", temp->value);
-		//printf("Cost: %i\n", temp->cost);
 		temp = temp->next;
 	}
 }
@@ -91,18 +89,12 @@ void	set_cheapest(t_stack *stack)
 	stack->cheapest = cheapest_node;
 }
 
-t_node	*get_cheapest(t_stack *stack)
+void	b_sort(t_stack *a, t_stack *b)
 {
-	t_node	*temp;
-
-	if(!stack)
-		return (NULL);
-	temp = stack->head;
-	while (temp)
-	{
-		if(temp->cheapest)
-			return (temp);
-		temp = temp->next;
-	}
-	return (NULL);
+	current_index(a);
+	current_index(b);
+	set_target_b(a, b);
+	cost_analysis(a, b);
+	set_cheapest(b);
+	move_b_a(a, b);
 }

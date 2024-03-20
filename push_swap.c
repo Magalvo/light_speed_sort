@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 00:29:25 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:06:30 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_list(t_stack *stack)
 {
 	while (stack->head->next)
 	{
-		//printf("Value: %d\n", stack->head->value);
+		printf("Value: %d\n", stack->head->value);
 		stack->head = stack->head->next;
 	}
 }
