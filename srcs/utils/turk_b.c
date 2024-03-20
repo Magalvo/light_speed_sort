@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:57:37 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 19:02:54 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 00:17:52 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void b_turk_target(t_stack *a, t_stack *b)
 	while (current_b)
 	{
 		best = INT_MAX;
-		while (current_b)
+		while (current_a)
 		{
-			if (current_b->value < current_a->value && current_b->value > best)
+			if (current_a->value > current_b->value && current_a->value < best)
 			{
-				best = current_b->value;
-				target = current_b;
+				best = current_a->value;
+				target = current_a;
 			}
-			current_b = current_b->next;
+			current_a = current_a->next;
 		}
 		if (best == INT_MAX)
 			current_b->target = find_min(a);
@@ -63,22 +63,10 @@ t_node *get_high_friend(t_stack *stack, int nbr)
 	return (best_node);
 }
 
-void b_turk_target(t_stack *a, t_stack *b)
-{
-	t_node *current;
-
-	current = b->head;
-	while (current)
-	{
-		current->target = get_high_friend(a, current->value);
-		current = current->next;
-	}
-}
-
 void move_turk_ba(t_stack *a, t_stack *b)
 {
-	push_prep(a, (b)->cheapest->target, 'a');
-	pb(a, b, false);
+	push_prep(a, b->head->target, 'a');
+	pa(a, b, false);
 }
 
 void init_nodes_b(t_stack *a, t_stack *b)

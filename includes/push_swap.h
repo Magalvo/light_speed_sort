@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:29:10 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 16:49:05 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/19 23:38:03 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,10 @@ void init_nodes_a(t_stack *a, t_stack *b);
 void init_nodes_b(t_stack *a, t_stack *b);
 void move_turk_ab(t_stack *a, t_stack *b);
 void move_turk_ba(t_stack *a, t_stack *b);
+
+void	rotate_both_turk(t_stack *a, t_stack *b, 
+							t_node *cheapest_node);
+void	reverse_rotate_both_turk(t_stack *a, t_stack *b,
+									t_node *cheapest_node);
 
 #endif

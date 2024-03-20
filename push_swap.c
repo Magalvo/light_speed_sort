@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/19 19:19:09 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/20 00:29:25 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int main(int argc, char **argv)
 			sa(&a, false);
 		else if (stack_len(&a) == 3)
 			sort_three(&a);
-		/* else if (stack_len(&a) <= 75)
-			turk_sort(&a, &b); */
+		else if (stack_len(&a) <= 75)
+			turk_sort(&a, &b);
 		else
 			quick_friend(&a, &b);
 	}
