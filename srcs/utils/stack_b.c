@@ -6,17 +6,17 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:53:22 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:26:18 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:23:53 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_node	*get_best_friend(t_stack *a, int nbr)
+t_node *get_best_friend(t_stack *a, int nbr)
 {
-	t_node	*temp_node;
-	t_node	*current;
-	int		temp;
+	t_node *temp_node;
+	t_node *current;
+	int temp;
 
 	current = a->head;
 	temp = INT_MAX;
@@ -32,9 +32,9 @@ t_node	*get_best_friend(t_stack *a, int nbr)
 	return (temp_node);
 }
 
-void	set_target_b(t_stack *a, t_stack *b)
+void set_target_b(t_stack *a, t_stack *b)
 {
-	t_node	*current;
+	t_node *current;
 
 	current = b->head;
 	while (current)
@@ -44,11 +44,11 @@ void	set_target_b(t_stack *a, t_stack *b)
 	}
 }
 
-void	cost_analysis(t_stack *dst, t_stack *src)
+void cost_analysis(t_stack *dst, t_stack *src)
 {
-	int		len_dst;
-	int		len_src;
-	t_node	*temp;
+	int len_dst;
+	int len_src;
+	t_node *temp;
 
 	temp = src->head;
 	len_dst = stack_len(dst);
@@ -66,14 +66,14 @@ void	cost_analysis(t_stack *dst, t_stack *src)
 	}
 }
 
-void	set_cheapest(t_stack *stack)
+void set_cheapest(t_stack *stack)
 {
-	int		cheapest_val;
-	t_node	*cheapest_node;
-	t_node	*current;
+	int cheapest_val;
+	t_node *cheapest_node;
+	t_node *current;
 
 	if (!stack || !(stack->head))
-		return ;
+		return;
 	current = stack->head;
 	cheapest_val = INT_MAX;
 	while (current)
@@ -89,7 +89,7 @@ void	set_cheapest(t_stack *stack)
 	stack->cheapest = cheapest_node;
 }
 
-void	b_sort(t_stack *a, t_stack *b)
+void b_sort(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);

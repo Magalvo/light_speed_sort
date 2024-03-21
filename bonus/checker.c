@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 17:42:37 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 17:23:25 by dde-maga         ###   ########.fr       */
+/*   Created: 2024/03/20 17:42:18 by dde-maga          #+#    #+#             */
+/*   Updated: 2024/03/21 18:45:41 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-#define CHECKER_H
+#include "../includes/checker.h"
 
-#include "push_swap.h"
+int main(int argc, char **argv)
+{
+	static t_stack	a;
+	static t_stack	b;
 
-void checker(t_stack *a, t_stack *b);
-bool move_it(t_stack *a, t_stack *b, char *str);
-t_list *get_moves(void);
-
-#endif
+	if (argc == 1)
+	{
+		return (0);
+	}
+	if (argc == 2 && !argv[1][0])
+	{
+		return (ft_putstr_fd("Error\n", 2), 0);
+	}
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	init_a(&a, argv + 1, argc == 2);
+	if (!stack_sorted(&a))
+		checker(&a, &b);
+	free_stack(&a, argv, argc == 2);
+	return (0);
+}

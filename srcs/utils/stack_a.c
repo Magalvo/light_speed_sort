@@ -6,16 +6,16 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:53:10 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:22:07 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:24:10 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	init_a(t_stack *a, char **argv, bool flag)
+void init_a(t_stack *a, char **argv, bool flag)
 {
-	long	nbr;
-	int		i;
+	long nbr;
+	int i;
 
 	i = 0;
 	while (argv[i])
@@ -38,9 +38,9 @@ void	init_a(t_stack *a, char **argv, bool flag)
 	}
 }
 
-void	a_sort(t_stack *a, t_stack *b, int max, int min)
+void a_sort(t_stack *a, t_stack *b, int max, int min)
 {
-	int	start_len;
+	int start_len;
 
 	ranking(a);
 	start_len = stack_len(a);

@@ -6,18 +6,18 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 14:57:26 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:28:05 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:24:10 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	a_turk_target(t_stack *a, t_stack *b)
+void a_turk_target(t_stack *a, t_stack *b)
 {
-	t_node	*current_a;
-	t_node	*current_b;
-	t_node	*target;
-	int		best;
+	t_node *current_a;
+	t_node *current_b;
+	t_node *target;
+	int best;
 
 	current_a = a->head;
 	while (current_a)
@@ -41,26 +41,25 @@ void	a_turk_target(t_stack *a, t_stack *b)
 	}
 }
 
-void	move_turk_ab(t_stack *a, t_stack *b)
+void move_turk_ab(t_stack *a, t_stack *b)
 {
-	t_node	*cheapest_node;
+	t_node *cheapest_node;
 
 	cheapest_node = a->cheapest;
 	if (cheapest_node->above_median && cheapest_node->target->above_median)
 		rotate_both_turk(a, b, cheapest_node);
-	else if (!(cheapest_node->above_median)
-		&& !(cheapest_node->target->above_median))
+	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
 		reverse_rotate_both_turk(a, b, cheapest_node);
 	push_prep(a, cheapest_node, 'a');
 	push_prep(b, cheapest_node->target, 'b');
 	pb(b, a, false);
 }
 
-void	cost_analysis_turk(t_stack *dst, t_stack *src)
+void cost_analysis_turk(t_stack *dst, t_stack *src)
 {
-	int		len_dst;
-	int		len_src;
-	t_node	*temp;
+	int len_dst;
+	int len_src;
+	t_node *temp;
 
 	temp = src->head;
 	len_dst = stack_len(dst);
@@ -78,7 +77,7 @@ void	cost_analysis_turk(t_stack *dst, t_stack *src)
 	}
 }
 
-void	init_nodes_a(t_stack *a, t_stack *b)
+void init_nodes_a(t_stack *a, t_stack *b)
 {
 	current_index(a);
 	current_index(b);

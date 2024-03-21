@@ -6,15 +6,15 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:32:23 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:23:17 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 18:33:30 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	free_all(char **in)
+void free_all(char **in)
 {
-	int	ctd;
+	int ctd;
 
 	ctd = 0;
 	while (in[ctd])
@@ -22,15 +22,15 @@ void	free_all(char **in)
 	free(in);
 }
 
-void	free_stack(t_stack *stack, char **av, bool flag)
+void free_stack(t_stack *stack, char **av, bool flag)
 {
-	t_node	*tmp;
-	t_node	*current;
+	t_node *tmp;
+	t_node *current;
 
 	if (flag)
 		free_all(av);
 	if (!stack)
-		return ;
+		return;
 	current = (stack)->head;
 	while (current)
 	{
@@ -41,14 +41,12 @@ void	free_stack(t_stack *stack, char **av, bool flag)
 	stack = NULL;
 }
 
-int	error_syntax(char *str_nbr)
+int error_syntax(char *str_nbr)
 {
-	if (!(*str_nbr == '+' || *str_nbr == '-' || (*str_nbr >= '0'
-				&& *str_nbr <= '9')))
-		return (ft_putstr_fd("Error1\n", 2), 1);
-	if ((*str_nbr == '+' || *str_nbr == '-') && !(str_nbr[1] >= '0'
-			&& str_nbr[1] <= '9'))
-		return (ft_putstr_fd("Error2\n", 2), 1);
+	if (!(*str_nbr == '+' || *str_nbr == '-' || (*str_nbr >= '0' && *str_nbr <= '9')))
+		return (ft_putstr_fd("Error\n", 2), 1);
+	if ((*str_nbr == '+' || *str_nbr == '-') && !(str_nbr[1] >= '0' && str_nbr[1] <= '9'))
+		return (ft_putstr_fd("Error\n", 2), 1);
 	while (*++str_nbr)
 	{
 		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
@@ -57,9 +55,9 @@ int	error_syntax(char *str_nbr)
 	return (0);
 }
 
-int	error_repetition(t_stack *a, int nbr)
+int error_repetition(t_stack *a, int nbr)
 {
-	t_node	*current;
+	t_node *current;
 
 	if (!a || !a->head)
 		return (0);
@@ -73,7 +71,7 @@ int	error_repetition(t_stack *a, int nbr)
 	return (0);
 }
 
-void	error_free(t_stack *a, char **argv, bool flag_argc_2)
+void error_free(t_stack *a, char **argv, bool flag_argc_2)
 {
 	free_stack(a, argv - 1, flag_argc_2);
 	exit(1);

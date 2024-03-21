@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/20 17:42:37 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 17:23:25 by dde-maga         ###   ########.fr       */
+/*   Created: 2024/03/21 12:55:46 by dde-maga          #+#    #+#             */
+/*   Updated: 2024/03/21 12:58:49 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-#define CHECKER_H
+#include "../../includes/push_swap.h"
 
-#include "push_swap.h"
-
-void checker(t_stack *a, t_stack *b);
-bool move_it(t_stack *a, t_stack *b, char *str);
-t_list *get_moves(void);
-
-#endif
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	ft_lstadd_back(&((*lst)->next), new);
+}

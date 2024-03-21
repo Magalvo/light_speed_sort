@@ -6,15 +6,15 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:31:47 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/20 16:25:04 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:24:10 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	sort_three(t_stack *a)
+void sort_three(t_stack *a)
 {
-	t_node	*biggest_node;
+	t_node *biggest_node;
 
 	biggest_node = find_max(a);
 	if (biggest_node == (a)->head)
@@ -25,10 +25,10 @@ void	sort_three(t_stack *a)
 		sa(a, false);
 }
 
-int	top_cost(t_stack *stack, t_node *small)
+int top_cost(t_stack *stack, t_node *small)
 {
-	int		cost;
-	t_node	*current;
+	int cost;
+	t_node *current;
 
 	cost = 0;
 	current = stack->head;
@@ -40,10 +40,10 @@ int	top_cost(t_stack *stack, t_node *small)
 	return (cost);
 }
 
-void	sort_ten(t_stack *a, t_stack *b)
+void sort_ten(t_stack *a, t_stack *b)
 {
-	t_node	*small;
-	t_node	*first;
+	t_node *small;
+	t_node *first;
 
 	first = find_min(a);
 	while (!stack_sorted(a))
