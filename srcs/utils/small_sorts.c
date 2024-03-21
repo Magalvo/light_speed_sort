@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 19:31:47 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 17:24:10 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 23:01:40 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void sort_three(t_stack *a)
 {
 	t_node *biggest_node;
 
+	if (stack_len(a) == 2)
+		sa(a, false);
 	biggest_node = find_max(a);
 	if (biggest_node == (a)->head)
 		ra(a, false);

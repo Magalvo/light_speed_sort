@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 22:52:18 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 23:08:42 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int main(int argc, char **argv)
 	}
 	else 
 		init_a(&a, argv + 1, argc == 2);
+	if (a.head->value == 418 && a.size == 1)
+			ft_putstr_fd("Im a sorted tea pot :)\n", 1);
 	if (!stack_sorted(&a))
 	{
-		if (stack_len(&a) == 2)
-			sa(&a, false);
-		else if (stack_len(&a) == 3)
+		if (stack_len(&a) == 3 || stack_len(&a) == 2)
 			sort_three(&a);
 		else if (stack_len(&a) <= 75)
 			turk_sort(&a, &b);

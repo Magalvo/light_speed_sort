@@ -6,7 +6,7 @@
 #    By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 18:26:26 by dde-maga          #+#    #+#              #
-#    Updated: 2024/03/21 18:26:58 by dde-maga         ###   ########.fr        #
+#    Updated: 2024/03/21 22:55:58 by dde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,6 @@ all: $(NAME)
 bonus: $(CHECKER_NAME)
 
 $(SRCOBJ)%.o: bonus/%.c
-	@mkdir -p $(SRCOBJ)
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
