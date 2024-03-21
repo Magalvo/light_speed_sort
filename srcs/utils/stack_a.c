@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:53:10 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 17:24:10 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 20:50:51 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ void init_a(t_stack *a, char **argv, bool flag)
 			error_free(a, argv, flag);
 		}
 		if (error_repetition(a, (int)nbr))
-		{
-			ft_putstr_fd("Error\n", 2);
 			error_free(a, argv, flag);
-		}
 		append_node(a, (int)nbr);
 		i++;
 	}

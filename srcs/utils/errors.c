@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:32:23 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 18:33:30 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 22:41:20 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int error_syntax(char *str_nbr)
 	while (*++str_nbr)
 	{
 		if (!(*str_nbr >= '0' && *str_nbr <= '9'))
-			return (ft_putstr_fd("Error3\n", 2), 1);
+			return (ft_putstr_fd("Error\n", 2), 1);
 	}
 	return (0);
 }
@@ -73,6 +73,6 @@ int error_repetition(t_stack *a, int nbr)
 
 void error_free(t_stack *a, char **argv, bool flag_argc_2)
 {
-	free_stack(a, argv - 1, flag_argc_2);
+	free_stack(a, argv, flag_argc_2);
 	exit(1);
 }

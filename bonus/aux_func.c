@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:37:23 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 18:31:27 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 21:29:05 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,19 @@ bool	move_it(t_stack *a, t_stack *b, char *str)
 	else if (!ft_strcmp(str, "rr\n", 3))
 		rr(a, b, true);
 	else
-		return (ft_putstr_fd("KO", 2), false);
+		return (ft_putstr_fd("Error\n", 2), false);
 	return (true);
 }
 
 void checker(t_stack *a, t_stack *b)
 {
 	char *line;
-
+	
+	if (stack_sorted(a) && b->size == 0)
+	{
+		ft_putstr_fd("OK\n", 1);
+		return ;
+	}
 	while (true)
 	{
 		line = get_next_line(0);
@@ -53,7 +58,7 @@ void checker(t_stack *a, t_stack *b)
 		free (line);
 	}
 	if (stack_sorted(a) && b->size == 0)
-		ft_putstr_fd("OK", 1);
+		ft_putstr_fd("OK\n", 1);
 	else
-		ft_putstr_fd("KO", 1);
+		ft_putstr_fd("KO\n", 1);
 }

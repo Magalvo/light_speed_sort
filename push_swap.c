@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 18:44:56 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/21 22:52:18 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ int main(int argc, char **argv)
 	static t_stack b;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-	{
-		return (ft_putstr_fd("Errorp\n", 2), 0);
-	}
+		return (ft_putstr_fd("Error\n", 2), 0);
 	if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
-	init_a(&a, argv + 1, argc == 2);
+		init_a(&a, argv, argc == 2);
+	}
+	else 
+		init_a(&a, argv + 1, argc == 2);
 	if (!stack_sorted(&a))
 	{
 		if (stack_len(&a) == 2)
