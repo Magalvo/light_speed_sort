@@ -19,7 +19,7 @@ Ready to launch? Setting up **Light Speed Sort** is as easy as initiating a warp
 1. **Clone this repository**: `git clone https://github.com/Magalvo/light_speed_sort.git`
 2. **Navigate to your project directory**: `cd light_speed_sort`
 3. **Compile the engine**: Follow the specific instructions based on your environment to compile the project.
-4. **Run the command**: `./light_speed_sort [your data here]` and watch as it sorts at light speed!
+4. **Run the command**: `./push_swap [your data here]` and watch as it sorts at light speed!
 
 ## Contributing to the Mission 🌠
 
