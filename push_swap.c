@@ -6,13 +6,13 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/21 23:08:42 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/25 11:28:13 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void print_list(t_stack *stack)
+void	print_list(t_stack *stack)
 {
 	while (stack->head->next)
 	{
@@ -21,10 +21,10 @@ void print_list(t_stack *stack)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	static t_stack a;
-	static t_stack b;
+	static t_stack	a;
+	static t_stack	b;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (ft_putstr_fd("Error\n", 2), 0);
@@ -33,15 +33,15 @@ int main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 		init_a(&a, argv, argc == 2);
 	}
-	else 
+	else
 		init_a(&a, argv + 1, argc == 2);
 	if (a.head->value == 418 && a.size == 1)
-			ft_putstr_fd("Im a sorted tea pot :)\n", 1);
+		ft_putstr_fd("Im a sorted tea pot :)\n", 1);
 	if (!stack_sorted(&a))
 	{
 		if (stack_len(&a) == 3 || stack_len(&a) == 2)
 			sort_three(&a);
-		else if (stack_len(&a) <= 75)
+		else if (stack_len(&a) <= 75 && stack_len(&a) > 5)
 			turk_sort(&a, &b);
 		else
 			quick_friend(&a, &b);

@@ -12,12 +12,12 @@
 
 #include "../../includes/push_swap.h"
 
-static void push(t_stack *dst, t_stack *src)
+static void	push(t_stack *dst, t_stack *src)
 {
-	t_node *push_node;
+	t_node	*push_node;
 
 	if (!src || !(src->head))
-		return;
+		return ;
 	push_node = src->head;
 	src->head = src->head->next;
 	if (src->head)
@@ -31,14 +31,14 @@ static void push(t_stack *dst, t_stack *src)
 	src->size--;
 }
 
-void pa(t_stack *a, t_stack *b, bool print)
+void	pa(t_stack *a, t_stack *b, bool print)
 {
 	push(a, b);
 	if (!print)
 		ft_putstr_fd("pa\n", 1);
 }
 
-void pb(t_stack *b, t_stack *a, bool print)
+void	pb(t_stack *b, t_stack *a, bool print)
 {
 	push(b, a);
 	if (!print)

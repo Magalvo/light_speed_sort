@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
-#define CHECKER_H
+# define CHECKER_H
 
-#include "push_swap.h"
+# include "push_swap.h"
 
-void checker(t_stack *a, t_stack *b);
-bool move_it(t_stack *a, t_stack *b, char *str);
-t_list *get_moves(void);
+void	checker(t_stack *a, t_stack *b);
+bool	move_it(t_stack *a, t_stack *b, char *str);
+t_list	*get_moves(void);
 
 #endif

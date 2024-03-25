@@ -39,10 +39,10 @@ bool	move_it(t_stack *a, t_stack *b, char *str)
 	return (true);
 }
 
-void checker(t_stack *a, t_stack *b)
+void	checker(t_stack *a, t_stack *b)
 {
-	char *line;
-	
+	char	*line;
+
 	if (stack_sorted(a) && b->size == 0)
 	{
 		ft_putstr_fd("OK\n", 1);
@@ -52,10 +52,10 @@ void checker(t_stack *a, t_stack *b)
 	{
 		line = get_next_line(0);
 		if (line == NULL)
-			break;
+			break ;
 		if (!move_it(a, b, line))
 			return (free(line));
-		free (line);
+		free(line);
 	}
 	if (stack_sorted(a) && b->size == 0)
 		ft_putstr_fd("OK\n", 1);

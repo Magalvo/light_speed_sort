@@ -12,13 +12,13 @@
 
 #include "../../includes/push_swap.h"
 
-void rotate(t_stack *stack)
+void	rotate(t_stack *stack)
 {
-	t_node *first;
-	t_node *last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!(stack)->head || !(stack)->head->next)
-		return;
+		return ;
 	first = (stack)->head;
 	(stack)->head = (stack)->head->next;
 	(stack)->head->prev = NULL;
@@ -31,21 +31,21 @@ void rotate(t_stack *stack)
 	stack->tail = first;
 }
 
-void ra(t_stack *a, bool print)
+void	ra(t_stack *a, bool print)
 {
 	rotate(a);
 	if (!print)
 		ft_putstr_fd("ra\n", 1);
 }
 
-void rb(t_stack *b, bool print)
+void	rb(t_stack *b, bool print)
 {
 	rotate(b);
 	if (!print)
 		ft_putstr_fd("rb\n", 1);
 }
 
-void rr(t_stack *a, t_stack *b, bool print)
+void	rr(t_stack *a, t_stack *b, bool print)
 {
 	rotate(a);
 	rotate(b);
@@ -53,7 +53,7 @@ void rr(t_stack *a, t_stack *b, bool print)
 		ft_putstr_fd("rr\n", 1);
 }
 
-void rotate_both(t_stack *a, t_stack *b, t_node *cheapest_node)
+void	rotate_both(t_stack *a, t_stack *b, t_node *cheapest_node)
 {
 	while (a->head != cheapest_node->target && b->head != cheapest_node)
 		rr(a, b, false);

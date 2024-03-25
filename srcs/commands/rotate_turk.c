@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
+void	rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
 {
 	while (b->head != cheapest_node->target && a->head != cheapest_node)
 		rr(a, b, false);
@@ -20,7 +20,7 @@ void rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
 	current_index(b);
 }
 
-void reverse_rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
+void	reverse_rotate_both_turk(t_stack *a, t_stack *b, t_node *cheapest_node)
 {
 	while (b->head != cheapest_node->target && a->head != cheapest_node)
 		rrr(a, b, false);
