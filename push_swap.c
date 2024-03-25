@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/25 11:28:13 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/25 13:05:24 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	static t_stack	b;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (ft_putstr_fd("Error\n", 2), 0);
+		return (0);
 	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
@@ -39,9 +39,9 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Im a sorted tea pot :)\n", 1);
 	if (!stack_sorted(&a))
 	{
-		if (stack_len(&a) == 3 || stack_len(&a) == 2)
+		if (a.size == 3 || a.size == 2)
 			sort_three(&a);
-		else if (stack_len(&a) <= 75 && stack_len(&a) > 5)
+		else if (a.size <= 75 && a.size > 5)
 			turk_sort(&a, &b);
 		else
 			quick_friend(&a, &b);

@@ -6,7 +6,7 @@
 #    By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 18:26:26 by dde-maga          #+#    #+#              #
-#    Updated: 2024/03/21 22:55:58 by dde-maga         ###   ########.fr        #
+#    Updated: 2024/03/25 12:59:29 by dde-maga         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ BONUS = $(addprefix ./bonus/, $(SRC_CHECKER))
 
 SRCOBJ = obj/
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 
+CFLAGS = -Wall -Wextra -Werror -g3
 OBJ = $(addprefix $(SRCOBJ), $(SRC:./srcs/%.c=%.o))
 BONUS_OBJ = $(addprefix $(SRCOBJ), $(BONUS:./bonus/%.c=%.o))
 
