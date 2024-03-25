@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:32:23 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/25 13:05:09 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:34:29 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,11 @@ void	free_stack(t_stack *stack, char **av, bool flag)
 	if (!stack)
 		return ;
 	current = (stack)->head;
-	while (current->next)
+	while (current)
 	{
 		tmp = current->next;
 		free(current);
 		current = tmp;
-		if (!current->next)
-		{
-			free(current);
-			break ;
-		}
 	}
 	stack = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: dde-maga <dde-maga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 18:27:27 by dde-maga          #+#    #+#             */
-/*   Updated: 2024/03/25 13:05:24 by dde-maga         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:47:55 by dde-maga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	print_list(t_stack *stack)
 	}
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	static t_stack	a;
-	static t_stack	b;
+	static t_stack a;
+	static t_stack b;
 
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (0);
