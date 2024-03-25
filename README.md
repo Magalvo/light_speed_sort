@@ -31,6 +31,16 @@ Your insights and contributions can help make **Light Speed Sort** even faster. 
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
 
+## Under the Hood: The Algorithmic Constellation 🛠️✨
+
+At the heart of **Light Speed Sort**, lies a powerful core engineered through the fusion of several universe-class sorting algorithms: **Turk**, **Best Friends**, and **Fast Sort**. This unique combination allows our spaceship to navigate through the most complex data galaxies with unparalleled speed and accuracy.
+
+- **Turk Algorithm**: Inspired by the legendary prowess of the Mechanical Turk, this algorithm cleverly anticipates data patterns, making swift decisions that reduce sorting time dramatically.
+- **Best Friends Sorting**: In the vast universe of data, some elements are just meant to be together. Best Friends sorting algorithm identifies and groups these elements early on, optimizing the sorting process through understanding and efficiency.
+- **Fast Sort**: The backbone of our operation, Fast Sort, lives up to its name, employing a rapid sorting mechanism that ensures your data is organized at light speed, without sacrificing precision.
+
+Together, these algorithms form the **Algorithmic Constellation**, a proprietary blend of sorting technology that sets **Light Speed Sort** apart from any other sorting tool in the cosmos. By leveraging the strengths of each algorithm, we offer a sorting solution that's not just fast, but also smart and adaptable to various data landscapes.
+
 ## License 📜
 
 Distributed under the MIT License. See `LICENSE` for more information.
